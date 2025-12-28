@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robo World — Build smarter workflows with AI automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neonLavender: '#b57edc',
+              electricBlue: '#5f8cff',
+              matteBlack: '#0a0a0a',
+              matteBlackLighter: '#141414',
+            },
+            fontFamily: {
+              sans: ['Lato', 'sans-serif'],
+            },
+            animation: {
+              'fade-up': 'fadeUp 0.8s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite',
+              'scroll-carousel': 'scrollCarousel 40s linear infinite',
+              'wave': 'wave 2s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-15px)' },
+              },
+              scrollCarousel: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+              wave: {
+                '0%, 100%': { transform: 'translateX(-5%)' },
+                '50%': { transform: 'translateX(5%)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #0a0a0a;
+            color: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .neon-glow-lavender {
+            box-shadow: 0 0 15px rgba(181, 126, 220, 0.4);
+        }
+
+        .neon-glow-lavender-hover:hover {
+            box-shadow: 0 0 25px rgba(181, 126, 220, 0.8);
+            border-color: #b57edc;
+        }
+
+        .neon-border-blue {
+            border: 1px solid rgba(95, 140, 255, 0.3);
+        }
+
+        .custom-cursor-trail {
+            pointer-events: none;
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background: #b57edc;
+            border-radius: 50%;
+            z-index: 9999;
+            box-shadow: 0 0 20px #b57edc, 0 0 40px #5f8cff;
+            transition: transform 0.1s ease-out;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .waving-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .waving-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #b57edc, #5f8cff);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .waving-underline:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .card-tilt {
+            transition: transform 0.3s ease;
+        }
+        .card-tilt:hover {
+            transform: translateY(-5px) rotateX(2deg) rotateY(2deg);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
